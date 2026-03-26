@@ -23,12 +23,10 @@ export const metadata: Metadata = {
     default: `${siteConfig.tuberSale.headline} — ${siteConfig.siteName}`,
     template: `%s — ${siteConfig.siteName}`,
   },
-  description:
-    "Dahlia tuber cancer benefit sale April 4, 2026 in Vancouver, WA. Bark for Life of Clark County — Relay For Life fundraising for the American Cancer Society.",
+  description: siteConfig.metaDescription,
   openGraph: {
     title: `${siteConfig.tuberSale.headline} — Bark for Life Clark County`,
-    description:
-      "April 4, 2026 · Vancouver, WA · Dahlia tuber sale benefiting cancer charity. Plus Bark for Life walk Aug 15 and ways to contribute.",
+    description: siteConfig.metaDescription,
     url: siteUrl,
     siteName: siteConfig.siteName,
     locale: "en_US",
@@ -37,8 +35,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: `${siteConfig.tuberSale.headline} — Bark for Life Clark County`,
-    description:
-      "April 4, 2026 dahlia tuber sale · Vancouver, WA · American Cancer Society Relay For Life",
+    description: siteConfig.metaDescription,
   },
   robots: { index: true, follow: true },
 };

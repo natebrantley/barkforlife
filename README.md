@@ -1,6 +1,6 @@
 # Bark for Life — Clark County, WA
 
-Informational [Next.js](https://nextjs.org) site for the **Bark for Life** team: dahlia tuber cancer benefit sale (April 4, 2026), main walk (August 15, 2026), ways to contribute (links only — no payments on this site), and the full tuber variety list.
+Informational [Next.js](https://nextjs.org) site for **Bark for Life** (Clark County) — a **dog-themed** Relay For Life / **American Cancer Society** fundraising team. It promotes a **one-day dahlia tuber sale** (April 4, 2026) run by a team member (**all but $1 per tuber** to charity), the **main Bark for Life walk** (August 15, 2026), and ways to help. Copy and stock photos lean on **cute dogs + pretty flowers**; add dahlia images in `src/data/stock-images.ts` when ready.
 
 ## Repository
 
@@ -56,4 +56,6 @@ Requires the plan at `%USERPROFILE%\.cursor\plans\bark_for_life_next.js_6388717b
 
 - `src/site.config.ts` — event copy, links, hashtags.
 - `src/data/tubers.ts` — tuber varieties (generated).
+- `src/data/stock-images.ts` — paths under `public/img/dogs/` (dog stock) and `public/img/dahlias/` (dahlia stock); optional `dahliaPhotos` toggles the second column beside dogs in tuber sections.
+- `public/img/BFL-V_RGB.webp` — Bark for Life / ACS logo (transparent). Subfolders: `dogs/`, `dahlias/`.
 - `src/app/opengraph-image.tsx` — 1200×630 share image for Open Graph / Twitter.

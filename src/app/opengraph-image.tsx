@@ -2,13 +2,15 @@ import { ImageResponse } from "next/og";
 import { siteConfig } from "@/site.config";
 
 export const alt =
-  "Bark for Life Clark County — Cancer benefit dahlia tuber sale April 4, 2026 in Vancouver, WA";
+  "Bark for Life Clark County — Dogs, dahlias and hope for the American Cancer Society. Dahlia tuber sale April 4, 2026, Vancouver WA.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 export default function OpenGraphImage() {
   const text = [
     "Bark for Life · Clark County, WA",
+    siteConfig.siteTagline,
+    "",
     siteConfig.tuberSale.headline,
     `${siteConfig.tuberSale.shortDate} · ${siteConfig.tuberSale.time}`,
     `${siteConfig.tuberSale.addressLine1}, ${siteConfig.tuberSale.cityStateZip}`,
@@ -23,7 +25,7 @@ export default function OpenGraphImage() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "linear-gradient(135deg, #fdf2f8 0%, #e0f2fe 45%, #f5f3ff 100%)",
+          background: "linear-gradient(135deg, #f5eef8 0%, #e4d9ee 50%, #ede4f8 100%)",
           padding: 56,
         }}
       >
@@ -36,7 +38,7 @@ export default function OpenGraphImage() {
             fontFamily: "system-ui, sans-serif",
             fontSize: 36,
             fontWeight: 600,
-            color: "#1e1b4b",
+            color: "#2a1832",
             lineHeight: 1.35,
             textAlign: "center",
             whiteSpace: "pre-line",

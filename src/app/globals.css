@@ -1,16 +1,22 @@
 @import "tailwindcss";
 
+/*
+  Brand purple matches Bark for Life / ACS logo at public/img/BFL-V_RGB.webp.
+  Primary: #5B2D84 — used for CTAs, links, and accents sitewide.
+*/
 :root {
-  --background: #faf5ff;
-  --foreground: #1e1b4b;
-  --bfl-pink: #fdf2f8;
-  --bfl-blue: #e0f2fe;
-  --bfl-purple: #f5f3ff;
-  --bfl-accent: #7c3aed;
-  --bfl-accent-hover: #6d28d9;
-  --bfl-ink: #1e1b4b;
-  --bfl-muted: #57534e;
-  --bfl-card-border: #e9d5ff;
+  --background: #faf7fc;
+  --foreground: #2a1832;
+  --bfl-brand: #5b2d84;
+  --bfl-pink: #f5eef8;
+  --bfl-blue: #e4d9ee;
+  --bfl-purple: #ede4f8;
+  --bfl-accent: #5b2d84;
+  --bfl-accent-hover: #4a2469;
+  --bfl-accent-soft: rgba(91, 45, 132, 0.12);
+  --bfl-ink: #2a1832;
+  --bfl-muted: #5d4e6a;
+  --bfl-card-border: #d1c4e0;
 }
 
 @theme inline {
@@ -20,7 +26,12 @@
 }
 
 body {
-  background: linear-gradient(180deg, var(--bfl-pink) 0%, #fff 40%, var(--bfl-blue) 100%);
+  background: linear-gradient(
+    180deg,
+    var(--bfl-pink) 0%,
+    #ffffff 42%,
+    var(--bfl-purple) 100%
+  );
   background-attachment: fixed;
   color: var(--foreground);
   font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;

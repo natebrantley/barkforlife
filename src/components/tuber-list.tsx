@@ -22,7 +22,7 @@ export function TuberList() {
 
       <div className="hidden overflow-x-auto rounded-2xl border border-[var(--bfl-card-border)] bg-white/90 shadow-sm md:block">
         <table className="w-full min-w-[32rem] border-collapse text-left text-sm">
-          <thead className="sticky top-0 z-10 bg-[var(--bfl-blue)]/90 backdrop-blur">
+          <thead className="sticky top-0 z-10 bg-[var(--bfl-purple)]/95 backdrop-blur">
             <tr>
               <th scope="col" className="px-4 py-3 font-semibold text-[var(--bfl-ink)]">
                 Variety
@@ -36,7 +36,7 @@ export function TuberList() {
             {tubers.map((t) => (
               <tr
                 key={`${t.name}-${t.abbreviation}`}
-                className="border-t border-[var(--bfl-card-border)] odd:bg-white/60 even:bg-[var(--bfl-pink)]/30"
+                className="border-t border-[var(--bfl-card-border)] odd:bg-white/60 even:bg-[var(--bfl-accent-soft)]"
               >
                 <td className="px-4 py-2.5 text-[var(--bfl-ink)]">{t.name}</td>
                 <td className="px-4 py-2.5 font-mono text-[var(--bfl-ink)]">
