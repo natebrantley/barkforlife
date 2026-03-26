@@ -6,6 +6,11 @@
  * (awareness + flowers) alongside the main walk and ways to help.
  */
 export const siteConfig = {
+  /**
+   * Tab title + Open Graph / Twitter title. Leads with one-day charity event.
+   */
+  seoTitle:
+    "One-day charity event — Dahlia tuber sale · April 4, 2026 · Bark for Life Clark County",
   siteName: "Bark for Life — Clark County, WA",
   /** Short line under the site name in the header (mobile/desktop) */
   siteTagline: "Dogs, dahlias & hope — fundraising for the American Cancer Society",
@@ -16,9 +21,9 @@ export const siteConfig = {
       "A Bark for Life team member is hosting this special one-day dahlia tuber sale to spread the word and sell beautiful tubers. All but one dollar from each tuber goes to charity. Think cute pups, stunning blooms, and neighbors showing up for each other.",
   },
   tuberSale: {
-    headline: "CANCER BENEFIT SALE",
+    headline: "ONE-DAY CHARITY EVENT",
     /** Short line under the main title */
-    subtitle: "One-day dahlia tuber sale · Vancouver, WA",
+    subtitle: "Dahlia tuber sale · Cancer benefit · Vancouver, WA",
     dateLabel: "April 4, 2026",
     shortDate: "4/4/26",
     time: "11am–3pm",
@@ -68,7 +73,15 @@ export const siteConfig = {
   ] as const,
   /** Used in layout metadata and Open Graph */
   metaDescription:
-    "One-day dahlia tuber sale April 4, 2026 in Vancouver, WA — Bark for Life & American Cancer Society. Cute dogs, beautiful dahlias, and all but $1 per tuber to charity.",
+    "One-day charity event: dahlia tuber sale April 4, 2026 in Vancouver, WA. Bark for Life & American Cancer Society — dogs, dahlias, all but $1 per tuber to charity.",
+  /**
+   * Open Graph / Twitter card image (dahlia photo). Path is under `public/`.
+   * Recommended aspect ~1.91:1 (e.g. 1200×630); platforms will crop if needed.
+   */
+  socialShareImage: {
+    path: "/img/dahlias/AdobeStock_154915679.jpeg",
+    alt: "Dahlia flowers — cancer benefit tuber sale, Bark for Life Clark County",
+  },
 } as const;
 
 export function getPublicSiteUrl(): string {

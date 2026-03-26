@@ -20,22 +20,29 @@ const siteUrl = getPublicSiteUrl();
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${siteConfig.tuberSale.headline} — ${siteConfig.siteName}`,
+    default: siteConfig.seoTitle,
     template: `%s — ${siteConfig.siteName}`,
   },
   description: siteConfig.metaDescription,
   openGraph: {
-    title: `${siteConfig.tuberSale.headline} — Bark for Life Clark County`,
+    title: siteConfig.seoTitle,
     description: siteConfig.metaDescription,
     url: siteUrl,
     siteName: siteConfig.siteName,
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: siteConfig.socialShareImage.path,
+        alt: siteConfig.socialShareImage.alt,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.tuberSale.headline} — Bark for Life Clark County`,
+    title: siteConfig.seoTitle,
     description: siteConfig.metaDescription,
+    images: [siteConfig.socialShareImage.path],
   },
   robots: { index: true, follow: true },
 };

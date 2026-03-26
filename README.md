@@ -58,4 +58,4 @@ Requires the plan at `%USERPROFILE%\.cursor\plans\bark_for_life_next.js_6388717b
 - `src/data/tubers.ts` — tuber varieties (generated).
 - `src/data/stock-images.ts` — paths under `public/img/dogs/` (dog stock) and `public/img/dahlias/` (dahlia stock); optional `dahliaPhotos` toggles the second column beside dogs in tuber sections.
 - `public/img/BFL-V_RGB.webp` — Bark for Life / ACS logo (transparent). Subfolders: `dogs/`, `dahlias/`.
-- `src/app/opengraph-image.tsx` — 1200×630 share image for Open Graph / Twitter.
+- Open Graph / Twitter preview image: dahlia photo from `siteConfig.socialShareImage` (`public/img/dahlias/…`), wired in `layout.tsx` via `metadataBase` so shared links resolve to absolute URLs.
