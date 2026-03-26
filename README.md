@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Bark for Life — Clark County, WA
 
-## Getting Started
+Informational [Next.js](https://nextjs.org) site for the **Bark for Life** team: dahlia tuber cancer benefit sale (April 4, 2026), main walk (August 15, 2026), ways to contribute (links only — no payments on this site), and the full tuber variety list.
 
-First, run the development server:
+## Repository
+
+**GitHub:** [github.com/natebrantley/barkforlife](https://github.com/natebrantley/barkforlife)
+
+```bash
+git clone https://github.com/natebrantley/barkforlife.git
+cd barkforlife
+npm install
+```
+
+Default branch: use `main` for new work (rename from `master` if your local repo still uses it: `git branch -m main`).
+
+## Local development
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build   # production build
+npm run lint
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Environment
 
-## Learn More
+| Variable | Purpose |
+| -------- | ------- |
+| `NEXT_PUBLIC_SITE_URL` | Canonical site URL (no trailing slash), used for `metadataBase` and Open Graph. Example: `https://your-domain.vercel.app` |
 
-To learn more about Next.js, take a look at the following resources:
+Copy `.env.example` to `.env.local` and set values as needed.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Regenerating the tuber list
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Variety data is generated from the project plan file:
+
+```bash
+npm run gen-tubers
+```
+
+Requires the plan at `%USERPROFILE%\.cursor\plans\bark_for_life_next.js_6388717b.plan.md` (adjust `scripts/gen-tubers.mjs` if you move the source of truth).
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Push this repository to GitHub (see remote above).
+2. In [Vercel](https://vercel.com), **Add New Project** → **Import** `natebrantley/barkforlife`.
+3. Framework preset: **Next.js** (auto-detected). Deploy.
+4. Under **Settings → Environment Variables**, set `NEXT_PUBLIC_SITE_URL` to your production URL (e.g. `https://barkforlife.vercel.app` or your custom domain). Redeploy so metadata and share previews use the correct base URL.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Project layout
+
+- `src/site.config.ts` — event copy, links, hashtags.
+- `src/data/tubers.ts` — tuber varieties (generated).
+- `src/app/opengraph-image.tsx` — 1200×630 share image for Open Graph / Twitter.
