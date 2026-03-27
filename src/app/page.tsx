@@ -154,7 +154,7 @@ export default function Home() {
                 href="#tubers"
                 className="inline-flex min-h-[48px] min-w-[10rem] flex-1 items-center justify-center rounded-full bg-[var(--bfl-accent)] px-6 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-[var(--bfl-accent-hover)] hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--bfl-accent)] sm:flex-initial"
               >
-                View tuber list
+                View Tuber List
               </a>
               <ExternalLink
                 href={siteConfig.links.relayUrl}
@@ -262,29 +262,41 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="tubers" className="scroll-mt-24">
+        <section
+          id="tubers"
+          className="scroll-mt-24 rounded-3xl border border-[var(--bfl-card-border)] bg-white/85 p-6 shadow-lg ring-1 ring-black/[0.03] sm:p-10"
+          aria-labelledby="tubers-heading"
+        >
           <div
-            className={`mb-6 grid gap-4 ${dahliaPhotos.tuberList ? "md:grid-cols-2" : ""}`}
+            className={`mb-8 grid gap-4 ${dahliaPhotos.tuberList ? "md:grid-cols-2" : ""}`}
           >
             <SectionStockPhoto
               src={stockImages.tuberList.src}
               alt={stockImages.tuberList.alt}
+              className="shadow-md ring-1 ring-black/5"
             />
             {dahliaPhotos.tuberList ? (
               <SectionStockPhoto
                 src={dahliaPhotos.tuberList.src}
                 alt={dahliaPhotos.tuberList.alt}
+                className="shadow-md ring-1 ring-black/5"
               />
             ) : null}
           </div>
-          <h2 className="font-[family-name:var(--font-display)] text-2xl font-bold text-[var(--bfl-ink)] sm:text-3xl">
-            Tuber list
+          <div className="mb-2 inline-flex rounded-full border border-[var(--bfl-accent)]/20 bg-[var(--bfl-accent)]/8 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-[var(--bfl-accent)]">
+            Reference
+          </div>
+          <h2
+            id="tubers-heading"
+            className="mt-3 font-[family-name:var(--font-display)] text-2xl font-bold text-[var(--bfl-ink)] sm:text-3xl"
+          >
+            Tuber List
           </h2>
-          <p className="mt-2 max-w-2xl text-[var(--bfl-muted)]">
-            Variety names and possible abbreviations marked on tubers. Some abbreviations
+          <p className="mt-3 max-w-2xl text-pretty text-base leading-relaxed text-[var(--bfl-muted)]">
+            Variety names and abbreviations you may see marked on tubers. Some abbreviations
             repeat — use the full name to tell them apart.
           </p>
-          <div className="mt-6">
+          <div className="mt-8">
             <TuberList />
           </div>
         </section>
@@ -308,22 +320,7 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <p className="text-center text-xs text-[var(--bfl-muted)] sm:text-left">
-            Photos: licensed stock photography. Dogs live in{" "}
-            <code className="rounded bg-[var(--bfl-purple)]/50 px-1 py-0.5 text-[11px]">
-              public/img/dogs
-            </code>
-            , dahlias in{" "}
-            <code className="rounded bg-[var(--bfl-purple)]/50 px-1 py-0.5 text-[11px]">
-              public/img/dahlias
-            </code>
-            ; paths are mapped in{" "}
-            <code className="rounded bg-[var(--bfl-purple)]/50 px-1 py-0.5 text-[11px]">
-              src/data/stock-images.ts
-            </code>
-            .
-          </p>
-          <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-sm font-medium sm:justify-start">
+          <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-sm font-medium">
             <ExternalLink
               href={siteConfig.links.relayUrl}
               className="text-[var(--bfl-accent)] underline-offset-4 hover:underline"
@@ -355,10 +352,10 @@ export default function Home() {
               Email
             </a>
           </div>
-          <p className="text-center text-sm text-[var(--bfl-muted)] sm:text-left">
+          <p className="text-center text-sm text-[var(--bfl-muted)]">
             {siteConfig.hashtags.join(" ")}
           </p>
-          <p className="text-center text-xs text-[var(--bfl-muted)] sm:text-left">
+          <p className="text-center text-xs text-[var(--bfl-muted)]">
             This site does not process donations or tuber payments — it links to official
             American Cancer Society and Relay For Life pages and team contact.
           </p>

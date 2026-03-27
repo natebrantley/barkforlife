@@ -3,31 +3,20 @@ import { tubers } from "@/data/tubers";
 export function TuberList() {
   return (
     <div className="w-full">
-      <ul className="grid gap-2 md:hidden">
-        {tubers.map((t) => (
-          <li
-            key={`${t.name}-${t.abbreviation}`}
-            className="rounded-2xl border border-[var(--bfl-card-border)] bg-white/80 px-4 py-3 shadow-sm"
-          >
-            <div className="font-medium text-[var(--bfl-ink)]">{t.name}</div>
-            <div className="text-sm text-[var(--bfl-muted)]">
-              Abbreviation:{" "}
-              <span className="font-mono text-[var(--bfl-ink)]">
-                {t.abbreviation}
-              </span>
-            </div>
-          </li>
-        ))}
-      </ul>
-
-      <div className="hidden overflow-x-auto rounded-2xl border border-[var(--bfl-card-border)] bg-white/90 shadow-sm md:block">
-        <table className="w-full min-w-[32rem] border-collapse text-left text-sm">
-          <thead className="sticky top-0 z-10 bg-[var(--bfl-purple)]/95 backdrop-blur">
+      <div className="overflow-x-auto rounded-2xl border border-[var(--bfl-card-border)] bg-white/95 shadow-sm ring-1 ring-black/[0.03]">
+        <table className="w-full min-w-[20rem] border-collapse text-left text-sm sm:text-[0.9375rem]">
+          <thead className="sticky top-0 z-10 border-b border-[var(--bfl-card-border)] bg-[var(--bfl-purple)]/95 backdrop-blur-sm">
             <tr>
-              <th scope="col" className="px-4 py-3 font-semibold text-[var(--bfl-ink)]">
+              <th
+                scope="col"
+                className="px-4 py-3.5 font-[family-name:var(--font-display)] font-semibold text-[var(--bfl-ink)] sm:px-5"
+              >
                 Variety
               </th>
-              <th scope="col" className="px-4 py-3 font-semibold text-[var(--bfl-ink)]">
+              <th
+                scope="col"
+                className="px-4 py-3.5 font-[family-name:var(--font-display)] font-semibold text-[var(--bfl-ink)] sm:px-5"
+              >
                 Abbreviation (on tuber)
               </th>
             </tr>
@@ -36,10 +25,12 @@ export function TuberList() {
             {tubers.map((t) => (
               <tr
                 key={`${t.name}-${t.abbreviation}`}
-                className="border-t border-[var(--bfl-card-border)] odd:bg-white/60 even:bg-[var(--bfl-accent-soft)]"
+                className="border-t border-[var(--bfl-card-border)]/80 odd:bg-white/70 even:bg-[var(--bfl-accent-soft)]/80 transition-colors hover:bg-[var(--bfl-purple)]/50"
               >
-                <td className="px-4 py-2.5 text-[var(--bfl-ink)]">{t.name}</td>
-                <td className="px-4 py-2.5 font-mono text-[var(--bfl-ink)]">
+                <td className="px-4 py-2.5 font-medium leading-snug text-[var(--bfl-ink)] sm:px-5 sm:py-3">
+                  {t.name}
+                </td>
+                <td className="whitespace-nowrap px-4 py-2.5 font-mono text-[var(--bfl-ink)] sm:px-5 sm:py-3">
                   {t.abbreviation}
                 </td>
               </tr>
