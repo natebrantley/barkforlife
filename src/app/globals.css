@@ -25,6 +25,22 @@
   --font-sans: var(--font-body);
 }
 
+html {
+  /* Offset in-page anchors below sticky header */
+  scroll-padding-top: 5.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+::selection {
+  background-color: color-mix(in srgb, var(--bfl-accent) 22%, transparent);
+  color: var(--bfl-ink);
+}
+
 body {
   background: linear-gradient(
     180deg,
@@ -35,4 +51,10 @@ body {
   background-attachment: fixed;
   color: var(--foreground);
   font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body {
+    background-attachment: scroll;
+  }
 }

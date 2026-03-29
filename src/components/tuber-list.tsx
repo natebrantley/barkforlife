@@ -1,11 +1,14 @@
-import { tubers } from "@/data/tubers";
+import { tuberCount, tubers } from "@/data/tubers";
 
 export function TuberList() {
   return (
     <div className="w-full">
-      <div className="overflow-x-auto rounded-2xl border border-[var(--bfl-card-border)] bg-white/95 shadow-sm ring-1 ring-black/[0.03]">
+      <div className="overflow-x-auto rounded-2xl border border-[var(--bfl-card-border)] bg-white/95 shadow-md ring-1 ring-black/[0.03]">
         <table className="w-full min-w-[20rem] border-collapse text-left text-sm sm:text-[0.9375rem]">
-          <thead className="sticky top-0 z-10 border-b border-[var(--bfl-card-border)] bg-[var(--bfl-purple)]/95 backdrop-blur-sm">
+          <caption className="sr-only">
+            Dahlia tuber varieties and abbreviations — {tuberCount} varieties
+          </caption>
+          <thead className="sticky top-[5.5rem] z-30 border-b border-[var(--bfl-card-border)] bg-[var(--bfl-purple)]/95 shadow-[0_1px_0_var(--bfl-card-border)] backdrop-blur-sm supports-[backdrop-filter]:bg-[var(--bfl-purple)]/90">
             <tr>
               <th
                 scope="col"

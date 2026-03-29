@@ -7,10 +7,10 @@
  */
 export const siteConfig = {
   /**
-   * Tab title + Open Graph / Twitter title. Leads with one-day charity event.
+   * Tab title + Open Graph / Twitter title. One-day-only sale + ACS proceeds.
    */
   seoTitle:
-    "One-day charity event — Dahlia tuber sale · April 4, 2026 · Bark for Life Clark County",
+    "One day only — Dahlia tuber sale · Proceeds to American Cancer Society · April 4, 2026 · Bark for Life Clark County",
   siteName: "Bark for Life — Clark County, WA",
   /** Short line under the site name in the header (mobile/desktop) */
   siteTagline: "Dogs, dahlias & hope — fundraising for the American Cancer Society",
@@ -18,12 +18,15 @@ export const siteConfig = {
     mission:
       "Bark for Life is a Relay For Life event rooted in love for dogs: we celebrate our canine companions while raising money for the American Cancer Society—research, patient programs, and support in communities like ours.",
     dahliaSale:
-      "A Bark for Life team member is hosting this special one-day dahlia tuber sale to spread the word and sell beautiful tubers. All but one dollar from each tuber goes to charity. Think cute pups, stunning blooms, and neighbors showing up for each other.",
+      "A Bark for Life team member is hosting this one-day-only dahlia tuber sale: one chance to shop in person, with proceeds supporting the American Cancer Society. Every tuber is $9—varieties range from about $9 to $28 in typical retail value, all at one sale price. Of each $9 sale, all but $1 goes to the American Cancer Society. Think cute pups, stunning blooms, and neighbors showing up for each other.",
   },
   tuberSale: {
-    headline: "ONE-DAY CHARITY EVENT",
+    /** Shown under the team pill, above the main title — emphasizes one day + ACS */
+    proceedsKicker:
+      "One day only · Proceeds to the American Cancer Society",
+    headline: "ONE-DAY-ONLY DAHLIA TUBER SALE",
     /** Short line under the main title */
-    subtitle: "Dahlia tuber sale · Cancer benefit · Vancouver, WA",
+    subtitle: "In-person sale · April 4, 2026 · Vancouver, WA",
     dateLabel: "April 4, 2026",
     shortDate: "4/4/26",
     time: "11am–3pm",
@@ -31,8 +34,11 @@ export const siteConfig = {
     cityStateZip: "Vancouver, WA 98661",
     presentedBy: "Bark for Life Team",
     organizer: "Barbara Harmon",
+    /** Shown in the sale details grid */
+    pricePrimary: "$9 each",
+    priceValueNote: "Typical retail value about $9–$28 per variety.",
     charityLine:
-      "All but $1 from each tuber sale goes to charity. Tubers are paid for in person at the sale—not on this website.",
+      "This sale happens one day only. Of each $9 tuber, all but $1 goes to the American Cancer Society. Pay in person at the sale—not on this website.",
   },
   mainWalk: {
     title: "Bark for Life walk",
@@ -73,14 +79,14 @@ export const siteConfig = {
   ] as const,
   /** Used in layout metadata and Open Graph */
   metaDescription:
-    "One-day charity event: dahlia tuber sale April 4, 2026 in Vancouver, WA. Bark for Life & American Cancer Society — dogs, dahlias, all but $1 per tuber to charity.",
+    "One day only: dahlia tuber sale April 4, 2026 in Vancouver, WA. Proceeds to the American Cancer Society (Bark for Life). $9 tubers (~$9–$28 value); all but $1 per sale to ACS.",
   /**
    * Open Graph / Twitter card image (dahlia photo). Path is under `public/`.
    * Recommended aspect ~1.91:1 (e.g. 1200×630); platforms will crop if needed.
    */
   socialShareImage: {
     path: "/img/dahlias/AdobeStock_154915679.jpeg",
-    alt: "Dahlia flowers — cancer benefit tuber sale, Bark for Life Clark County",
+    alt: "Dahlia flowers — one-day-only tuber sale benefiting the American Cancer Society, Bark for Life Clark County",
   },
 } as const;
 

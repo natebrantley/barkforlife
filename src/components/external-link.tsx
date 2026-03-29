@@ -17,6 +17,7 @@ export function ExternalLink({
       className={className}
     >
       {children}
+      <span className="sr-only"> (opens in new tab)</span>
     </a>
   );
 }
